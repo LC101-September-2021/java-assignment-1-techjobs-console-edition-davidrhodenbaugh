@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -119,13 +120,17 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-        for (HashMap<String, String> oneJob : someJobs) {
-            System.out.println("\n*****");
-            for (HashMap.Entry<String, String> category : oneJob.entrySet()) {
-                System.out.println(category.getKey() + ": " + category.getValue());
-            }
-            System.out.println("*****");
+        if (someJobs.size() == 0) {
+            System.out.println("No Jobs");
         }
-        //System.out.println("printJobs is not implemented yet");
+        else {
+            for (HashMap<String, String> oneJob : someJobs) {
+                System.out.println("\n*****");
+                for (HashMap.Entry<String, String> category : oneJob.entrySet()) {
+                    System.out.println(category.getKey() + ": " + category.getValue());
+                }
+                System.out.println("*****");
+            }
+        }
     }
 }
